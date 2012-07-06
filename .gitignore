@@ -1,0 +1,14 @@
+.project
+.cproject
+*.pyc
+*.so
+*.cmake
+bin/
+build/
+.pydevproject
+.metadata
+*.*~
+msg_gen
+srv_gen
+*.cfgc
+CMakeFiles
