@@ -38,7 +38,7 @@ class Init(smach.State):
         # make sure we get the *next* tag detection message
         self.curr_msg = None
         while self.curr_msg is None:
-            rospy.sleep(1.0)
+            rospy.sleep(0.1)
         # TODO: this is sloppy ... should cycle through all and choose best, rather than just looking for first
         # however, it shouldn't matter, as the next callback will find the following marker
         # TODO: this duplicates code in the GotoTag.execute method...
@@ -55,7 +55,7 @@ class Init(smach.State):
                 return 'tag_seen'
 
         userdata.init_iter_count += 1
-        if userdata.init_iter_count < 10:
+        if userdata.init_iter_count < 5:
             return 'keep_looking'
         else:
             userdata.init_iter_count = 0
